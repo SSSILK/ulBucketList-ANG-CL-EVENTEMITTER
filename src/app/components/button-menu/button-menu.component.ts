@@ -12,7 +12,7 @@ export class ButtonMenuComponent implements OnInit {
    * component to trigger an increment of the 'num' value.
    */
   @Output()
-  incrementEvent : EventEmitter<any> = new EventEmitter<any>();
+  incrementEvent : EventEmitter<number> = new EventEmitter<number>();
   /**
    * TODO: provide an EventEmitter intended for decrementing the parent component's count value.
    */
@@ -24,10 +24,14 @@ export class ButtonMenuComponent implements OnInit {
     this.incrementEvent.emit();
   }
 
+  @Output()
+  decrementEvent: EventEmitter<number> = new EventEmitter<number>();
+
   /**
    * TODO: emit a decrementEvent to the parent component once the decrementEvent EventEmitter has been set up.
    */
   decrement() {
+    this.decrementEvent.emit();
   }
 
   constructor() { }
